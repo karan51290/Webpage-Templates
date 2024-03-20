@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #233857, #6EC1E4);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container {
+            max-width: 400px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+        .message {
+            font-size: 36px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .timer {
+            font-size: 24px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="message">Thank You. Your inquiry has been received. We will contact you shortly</div>
+        <div class="timer">Redirecting to home page in <span id="countdown">5</span> seconds.</div>
+    </div>
+
+    <script>
+        // Countdown timer
+        var countdown = 5;
+        var timer = setInterval(function() {
+            countdown--;
+            document.getElementById('countdown').textContent = countdown;
+            if (countdown <= 0) {
+                clearInterval(timer);
+                window.location.href = "/";
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
